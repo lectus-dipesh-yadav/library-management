@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">Edit Book</h2>
+
+<form method="POST" class="card p-4 shadow-sm">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" name="title" class="form-control" value="{{ book[1] }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Author</label>
+        <input type="text" name="author" class="form-control" value="{{ book[2] }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Year</label>
+        <input type="number" name="year" class="form-control" value="{{ book[3] }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input type="text" name="category" class="form-control" value="{{ book[4] }}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Summary</label>
+        <textarea name="summary" class="form-control">{{ book[5] }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Publisher</label>
+        <input type="text" name="publisher" class="form-control" value="{{ book[6] }}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">ISBN</label>
+        <input type="text" name="isbn" class="form-control" value="{{ book[7] }}">
+    </div>
+
+    <!-- Update Button -->
+    <button type="submit" name="action" value="update" class="btn btn-primary">Update Book</button>
+
+    <!-- Delete Button (POST form) -->
+    <button type="submit" name="action" value="delete" class="btn btn-danger float-end"
+            onclick="return confirm('Are you sure you want to delete this book?');">
+        Delete Book
+    </button>
+</form>
+{% endblock %}

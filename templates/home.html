@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center my-4">
+    <h1 class="display-4 fw-bold" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        Library Management system
+    </h1>
+    <p class="lead fw-bold text-muted">
+        {{ greeting }}, welcome back!
+    </p>
+</div>
+
+<div class="card p-4 shadow-sm mx-auto" style="max-width: 400px;">
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <p class="mt-3 text-center text-muted">Manage your books easily</p>
+    <div class="text-center mt-2">
+        <a href="{{ url_for('register') }}">Register</a> | 
+        <a href="{{ url_for('forgot') }}">Forgot Password?</a>
+    </div>
+</div>
+{% endblock %}

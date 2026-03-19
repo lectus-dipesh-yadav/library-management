@@ -1,0 +1,6 @@
+*.pyc
+library.db
+screenshot/
+.env
+*.log
+
